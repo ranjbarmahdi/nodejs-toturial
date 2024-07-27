@@ -32,12 +32,3 @@
 
 // console.log(__filename); // get __dirname+filename
 
-
-const x = {
-  "name": "John Doe",
-  "age": 30,
-  "email": "johndoe@example.com",
-
-}
-
-console.table(x)
