@@ -2,12 +2,18 @@ import express from "express";
 
 const app = express();
 app.use(express.urlencoded({ extended: false }));
+import path from "path";
+import { fileURLToPath } from "url";
 
-app.use(express.static("C:UsersUser1Desktop\nodejs-toturialSession_06miniProjectpublick"));
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+app.use(
+    express.static(path.join(__dirname, "publick"))
+);
 
 app.get("/", (req, res) => {
     const html = `
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
     <form action="/result-page" method="post">
         <label>3 + 4 = ?</label><br/>
         <input type="text" name="result" /><br />
