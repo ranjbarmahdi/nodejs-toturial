@@ -32,4 +32,8 @@ await Book.sync({ force: true });
 
 // await Book.create({ category: "Programming" });
 
-await Book.create({ category: "Programming", c: "a" });
+const newBook = await Book.create({ category: "Programming" });
+console.log("New Book : ", newBook);
+
+const x = await Book.findAll();
+console.log("all : ", x);
